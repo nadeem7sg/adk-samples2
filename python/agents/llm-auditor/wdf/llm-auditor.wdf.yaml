@@ -9,6 +9,17 @@ metadata:
     correct inaccuracies. Exposes an ADK web UI on port 8080.
   tags:
     env: dev
+  labels:
+    app: llm-auditor
+    framework: google-adk
+  annotations:
+    sherpa.7sg.ai/origin: adk-samples
+  version: "0.1.0"
+
+source:
+  repo: https://github.com/google/adk-samples
+  branch: main
+  path: python/agents/llm-auditor
 
 security:
   policies:
