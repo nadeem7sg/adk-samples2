@@ -19,7 +19,7 @@ metadata:
   version: "0.1.0"
 
 source:
-  repo: https://github.com/google/adk-samples
+  repo: https://github.com/7sg-ai/adk-samples2
   branch: main
   path: python/agents/ai-security-agent
 
