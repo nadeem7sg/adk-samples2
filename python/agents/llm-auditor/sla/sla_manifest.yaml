@@ -1,0 +1,12 @@
+# SLA folder manifest — llm_auditor
+version: 1
+reference:
+  title: "AI-Enabled Application: Run, Scale & Operate Metrics Framework"
+  source_document: "Profilingconfluence.MD"
+files:
+  - path: operating_sla.yaml
+    role: canonical
+    summary: >-
+      Operating objectives and instrumentation obligations derived only from
+      Profilingconfluence.MD (sections §1–§21), with an application binding for
+      the critic → reviser sequential agent in this package.

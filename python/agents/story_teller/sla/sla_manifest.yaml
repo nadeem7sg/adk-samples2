@@ -1,0 +1,13 @@
+# SLA folder manifest — story_teller
+version: 1
+reference:
+  title: "AI-Enabled Application: Run, Scale & Operate Metrics Framework"
+  source_document: "Profilingconfluence.MD"
+files:
+  - path: operating_sla.yaml
+    role: canonical
+    summary: >-
+      Operating objectives and instrumentation obligations derived only from
+      Profilingconfluence.MD (sections §1–§21), with an application binding for
+      the collaborative story pipeline (prompt enhancer, looped chapter cycle
+      with parallel writers and critique, final editor) described in README.md.
