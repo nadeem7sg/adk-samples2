@@ -6,6 +6,7 @@ metadata:
   description: >
     GCP target for the Blog Writer agent. Cloud Run for serverless
     container hosting and Vertex AI for Gemini model access (Pro + Flash).
+  version: "1.0.0"
   tags:
     provider: gcp
     geo: us

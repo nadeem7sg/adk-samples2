@@ -6,6 +6,7 @@ metadata:
   description: >
     GCP target for the Financial Advisor agent. Cloud Run for serverless
     container hosting and Vertex AI for Gemini 2.5 Pro model access.
+  version: "1.0.0"
   tags:
     provider: gcp
     geo: us

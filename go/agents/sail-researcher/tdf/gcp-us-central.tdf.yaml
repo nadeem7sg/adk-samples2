@@ -8,6 +8,7 @@ metadata:
     service; Gemini API supplies all LLM agents; Google Maps Platform powers
     Places and geocoding tools; Secret Manager holds runtime credentials;
     Cloud Trace and Cloud Logging provide observability.
+  version: "1.0.0"
   tags:
     provider: gcp
     geo: us
@@ -47,7 +48,7 @@ target:
         supportedRegions:
           - global
     - name: maps-platform
-      type: api
+      type: custom
       providerService: Google Maps Platform (Places API)
       endpoints:
         api: https://maps.googleapis.com
