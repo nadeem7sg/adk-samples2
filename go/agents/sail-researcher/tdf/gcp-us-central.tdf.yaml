@@ -1,7 +1,7 @@
 apiVersion: tdf.7sg.ai/v1
 kind: TargetDefinition
 metadata:
-  name: gcp-us-central
+  name: sail-researcher-gcp-us-central
   displayName: GCP US Central — Cloud Run + Gemini + Maps
   description: >
     GCP target for the Sail Researcher ADK agent. Cloud Run hosts the Go HTTP

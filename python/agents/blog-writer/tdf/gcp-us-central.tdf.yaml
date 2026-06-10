@@ -1,7 +1,7 @@
 apiVersion: tdf.7sg.ai/v1
 kind: TargetDefinition
 metadata:
-  name: gcp-us-central
+  name: blog-writer-gcp-us-central
   displayName: GCP US Central - Cloud Run + Vertex AI
   description: >
     GCP target for the Blog Writer agent. Cloud Run for serverless

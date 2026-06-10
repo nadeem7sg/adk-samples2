@@ -1,7 +1,7 @@
 apiVersion: tdf.7sg.ai/v1
 kind: TargetDefinition
 metadata:
-  name: gcp-us-central
+  name: ai-security-agent-gcp-us-central
   displayName: GCP US Central - Cloud Run + Vertex AI
   description: >
     GCP target for the AI Security Agent. Cloud Run for serverless
