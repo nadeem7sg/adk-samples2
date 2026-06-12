@@ -28,6 +28,8 @@ slos:
     max_cost_per_transaction_usd: 3.00
   cache:
     hit_rate_min_pct: 0.0
+  load:
+    replay_concurrency: 1   # heavy 4-sub-agent system; serialize to avoid container overload
 
 reference:
   title: "AI-Enabled Application: Run, Scale & Operate Metrics Framework"

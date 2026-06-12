@@ -35,6 +35,8 @@ slos:
     max_cost_per_transaction_usd: 0.10   # observed ~$0.054/txn + headroom
   cache:
     hit_rate_min_pct: 0.0        # agent does not use prompt caching
+  load:
+    replay_concurrency: 6   # light agent; handles 6 concurrent fine
 
 reference:
   title: "AI-Enabled Application: Run, Scale & Operate Metrics Framework"

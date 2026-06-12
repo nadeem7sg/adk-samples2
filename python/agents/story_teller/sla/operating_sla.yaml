@@ -29,6 +29,8 @@ slos:
     max_cost_per_transaction_usd: 0.30
   cache:
     hit_rate_min_pct: 0.0
+  load:
+    replay_concurrency: 6   # light/sequential agent; handles 6 concurrent
 
 reference:
   title: "AI-Enabled Application: Run, Scale & Operate Metrics Framework"
