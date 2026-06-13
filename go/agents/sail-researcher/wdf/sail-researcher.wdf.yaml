@@ -32,24 +32,34 @@ security:
 
 secrets:
   provider: external-secrets
+  vaults:
+    - name: gcp-main
+      projectIdRef: gcp-secret-manager-project-id
+      tokenRef: gcp-sa-key-json
+    - name: internal-org-vault
+      addressRef: vault-address
+      tokenRef: vault-token
   secretRefs:
     - name: google-cloud-project
       injectAs: env
       envVar: GOOGLE_CLOUD_PROJECT
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/sail-researcher/gcp/project
     - name: gemini-api-key
       injectAs: env
       envVar: GEMINI_API_KEY
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/sail-researcher/gcp/gemini-api-key
     - name: google-maps-key
       injectAs: env
       envVar: GOOGLE_MAPS_KEY
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/sail-researcher/gcp/google-maps-key
 
 dataSources:
