@@ -18,10 +18,12 @@ metadata:
     sherpa.7sg.ai/origin: adk-samples
   version: "0.1.0"
 
-source:
-  repo: https://github.com/7sg-ai/adk-samples2
-  branch: main
-  path: python/agents/ai-security-agent
+workload:
+  source:
+    git:
+      repoUrl: https://github.com/nadeem7sg/adk-samples2
+      ref: main
+      path: python/agents/ai-security-agent
 
 security:
   policies:
@@ -104,7 +106,7 @@ scenarios:
               protocol: http
               path: /
     deployments:
-      - name: gcp-us-central
+      - name: ai-security-agent-gcp-us-central
         target:
           provider: gcp
           region: us-central1

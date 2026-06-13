@@ -19,10 +19,12 @@ metadata:
     sherpa.7sg.ai/origin: adk-samples2
   version: "0.1.0"
 
-source:
-  repo: https://github.com/7sg-ai/adk-samples2
-  branch: main
-  path: go/agents/sail-researcher
+workload:
+  source:
+    git:
+      repoUrl: https://github.com/nadeem7sg/adk-samples2
+      ref: main
+      path: go/agents/sail-researcher
 
 security:
   policies:
@@ -117,7 +119,7 @@ scenarios:
               protocol: http
               path: /api/
     deployments:
-      - name: gcp-us-central
+      - name: sail-researcher-gcp-us-central
         target:
           provider: gcp
           region: us-central1

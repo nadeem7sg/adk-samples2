@@ -18,10 +18,12 @@ metadata:
     sherpa.7sg.ai/origin: adk-samples
   version: "0.1.0"
 
-source:
-  repo: https://github.com/google/adk-samples
-  branch: main
-  path: python/agents/blog-writer
+workload:
+  source:
+    git:
+      repoUrl: https://github.com/nadeem7sg/adk-samples2
+      ref: main
+      path: python/agents/blog-writer
 
 security:
   policies:
@@ -106,7 +108,7 @@ scenarios:
               protocol: http
               path: /
     deployments:
-      - name: gcp-us-central
+      - name: blog-writer-gcp-us-central
         target:
           provider: gcp
           region: us-central1
