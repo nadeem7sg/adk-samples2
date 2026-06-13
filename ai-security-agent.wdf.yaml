@@ -31,45 +31,48 @@ security:
 
 secrets:
   provider: external-secrets
-  providers:
+  vaults:
     - name: gcp-main
-      provider: gcp-secret-manager
       projectIdRef: gcp-secret-manager-project-id
-      brokerSecretRef: gcp-sa-key-json
+      tokenRef: gcp-sa-key-json
     - name: internal-org-vault
-      provider: vault
+      addressRef: vault-address
+      tokenRef: vault-token
   secretRefs:
     - name: google-cloud-project
       injectAs: env
       envVar: GOOGLE_CLOUD_PROJECT
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/ai-security-agent/gcp/project
     - name: google-cloud-location
       injectAs: env
       envVar: GOOGLE_CLOUD_LOCATION
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/ai-security-agent/gcp/location
     - name: google-api-key
       injectAs: env
       envVar: GOOGLE_API_KEY
       externalRef:
         provider: vault
+        vaultRef: internal-org-vault
         key: secret/ai-security-agent/gcp/api-key
     - name: deploy-service-account-key
       injectAs: file
       filePath: /credentials/deploy-sa.json
       externalRef:
         provider: gcp-secret-manager
-        providerRef: gcp-main
+        vaultRef: gcp-main
         key: deploy-service-account-key
     - name: deploy-service-account-key-json
       injectAs: env
       envVar: GCP_SA_KEY_JSON
       externalRef:
         provider: gcp-secret-manager
-        providerRef: gcp-main
+        vaultRef: gcp-main
         key: deploy-service-account-key
 
 dataSources:
