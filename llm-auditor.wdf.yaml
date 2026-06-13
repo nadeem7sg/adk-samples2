@@ -33,30 +33,24 @@ secrets:
     - name: gcp-main
       projectIdRef: gcp-secret-manager-project-id
       tokenRef: gcp-sa-key-json
-    - name: internal-org-vault
-      addressRef: vault-address
-      tokenRef: vault-token
   secretRefs:
     - name: google-cloud-project
       injectAs: env
       envVar: GOOGLE_CLOUD_PROJECT
       externalRef:
         provider: vault
-        vaultRef: internal-org-vault
         key: secret/llm-auditor/gcp/project
     - name: google-cloud-location
       injectAs: env
       envVar: GOOGLE_CLOUD_LOCATION
       externalRef:
         provider: vault
-        vaultRef: internal-org-vault
         key: secret/llm-auditor/gcp/location
     - name: google-api-key
       injectAs: env
       envVar: GOOGLE_API_KEY
       externalRef:
         provider: vault
-        vaultRef: internal-org-vault
         key: secret/llm-auditor/gcp/api-key
     - name: deploy-service-account-key
       injectAs: file
