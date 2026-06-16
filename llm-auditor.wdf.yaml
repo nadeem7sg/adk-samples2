@@ -38,20 +38,23 @@ secrets:
       injectAs: env
       envVar: GOOGLE_CLOUD_PROJECT
       externalRef:
-        provider: vault
-        key: secret/llm-auditor/gcp/project
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: google-cloud-project
     - name: google-cloud-location
       injectAs: env
       envVar: GOOGLE_CLOUD_LOCATION
       externalRef:
-        provider: vault
-        key: secret/llm-auditor/gcp/location
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: google-cloud-location
     - name: google-api-key
       injectAs: env
       envVar: GOOGLE_API_KEY
       externalRef:
-        provider: vault
-        key: secret/llm-auditor/gcp/api-key
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: google-api-key
     - name: deploy-service-account-key
       injectAs: file
       filePath: /credentials/deploy-sa.json

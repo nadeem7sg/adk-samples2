@@ -41,20 +41,23 @@ secrets:
       injectAs: env
       envVar: GOOGLE_CLOUD_PROJECT
       externalRef:
-        provider: vault
-        key: secret/sail-researcher/gcp/project
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: google-cloud-project
     - name: gemini-api-key
       injectAs: env
       envVar: GEMINI_API_KEY
       externalRef:
-        provider: vault
-        key: secret/sail-researcher/gcp/gemini-api-key
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: gemini-api-key
     - name: google-maps-key
       injectAs: env
       envVar: GOOGLE_MAPS_KEY
       externalRef:
-        provider: vault
-        key: secret/sail-researcher/gcp/google-maps-key
+        provider: gcp-secret-manager
+        vaultRef: gcp-main
+        key: google-maps-key
 
 dataSources:
   inputs:
