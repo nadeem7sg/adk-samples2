@@ -24,7 +24,9 @@ COPY . .
 # Install the project itself
 RUN uv sync --frozen
 
-# Expose the ADK web UI port
+# Expose the ADK web UI port (Cloud Run injects $PORT, defaulting to 8080)
 EXPOSE 8080
 
-CMD ["uv", "run", "adk", "web", "--host", "0.0.0.0", "--port", "8080"]
+# Bind to the port the runtime assigns ($PORT on Cloud Run / Knative), falling
+# back to 8080 for local `docker run`. Shell form is required so $PORT expands.
+CMD ["sh", "-c", "uv run adk web --host 0.0.0.0 --port ${PORT:-8080}"]
